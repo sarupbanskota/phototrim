@@ -8,7 +8,7 @@ Dir.foreach('images') do |subdir|
 	unless subdir == "." or subdir == ".."
 		print "Processing images within " + subdir.to_s + "\n"
 		Dir.foreach(File.join("images", subdir)) do |victimfile|
-			unless victimfile == "." or victimfile ==  ".."
+			unless victimfile == "." or victimfile ==  ".." or File.extname(victimfile) == ".svg"
 				print "Processing file " + victimfile + "\n"
 				victim = ImageList.new(File.join("images", subdir, victimfile))
 				if victim.columns > 640
@@ -21,5 +21,7 @@ Dir.foreach('images') do |subdir|
 		end
 	end
 end
+
+print "Done!"
 
 exit

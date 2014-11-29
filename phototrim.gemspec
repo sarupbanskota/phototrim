@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'phototrim'
-  s.version     = '0.0.0'
+  s.version     = '0.0.1'
   s.date        = '2014-12-01'
   s.summary     = "Phototrim"
   s.description = "Scales photos down to neat-ify blogs"
