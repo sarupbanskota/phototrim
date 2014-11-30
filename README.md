@@ -1,4 +1,26 @@
-phototrim
-=========
+# Phototrim
 
-Gem that helps trim a bunch of photos
+Simple gem that helps with resizing a bunch of photos
+
+## Installation
+
+Add this line to your application's Gemfile:
+
+    gem 'phototrim'
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install phototrim
+
+
+## Contributing
+
+1. Fork it ( https://github.com/sarupbanskota/phototrim/fork )
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create a new Pull Request

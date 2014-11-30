@@ -1,6 +1,6 @@
 #! /usr/local/bin/ruby -w
 # Sarup Banskota, 1 December 2014
-
+require 'phototrim/version'
 require 'RMagick'
 include Magick
 
