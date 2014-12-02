@@ -5,7 +5,7 @@ require 'phototrim/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "phototrim"
-  spec.version       = Phototrim::VERSION
+  spec.version       = PhototrimVersion::VERSION
   spec.authors       = ["Sarup Banskota"]
   spec.email         = ["sbanskota08@gmail.com"]
   spec.summary       = %q{Simple gem that helps with resizing a bunch of photos}

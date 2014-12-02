@@ -1,3 +1,3 @@
-module Phototrim
-  VERSION = "0.0.3"
+module PhototrimVersion
+  VERSION = "0.0.5"
 end

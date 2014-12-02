@@ -6,25 +6,24 @@ require 'RMagick'
 include Magick
 
 class Phototrim
-  def self.trim(max_size, root_dir)
-    Dir.foreach(root_dir) do |subdir|
-      unless subdir == "." or subdir == ".."
-        puts "Processing images within #{subdir}..." 
-        Dir.foreach(File.join(root_dir, subdir)) do |victimfile|
-          unless victimfile == "." or victimfile ==  ".." or File.extname(victimfile) == ".svg"
-            puts "Processing file #{victimfile}.."
-            victim = ImageList.new(File.join(root_dir, subdir, victimfile))
-            if victim.columns > max_size
-              puts "#{victimfile} is beyond #{max_size} px wide, scaling down.."
-              victim = victim.scale(max_size.to_f/victim.columns)
-              puts "Scaled down #{victimfile}."
-              victim.write(File.join(root_dir, subdir, victimfile))
-            end 
+  def self.trim(max_size, root_path)
+    Dir.foreach root_path do |path_object|
+      unless path_object == "." or path_object == ".." or File.extname(path_object) == ".svg"
+        if File.directory? File.join(root_path, path_object)
+          puts "Processing images within #{path_object}..."
+          trim(max_size, File.join(root_path, path_object))
+        else
+          puts "Processing file #{path_object}"
+          victim = ImageList.new(File.join(root_path, path_object))
+          if victim.columns > max_size
+            puts "#{path_object} is beyond #{max_size}px wide, scaling down.."
+            victim = victim.scale(max_size.to_f/victim.columns)
+            puts "Scaled down #{path_object}"
+            victim.write(File.join(root_path, path_object))
           end
         end
       end
     end
-
     puts "Done!"
   end
 end
