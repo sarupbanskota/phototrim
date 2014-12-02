@@ -16,6 +16,25 @@ Or install it yourself as:
 
     $ gem install phototrim
 
+## Usage
+
+The `Phototrim` class makes available to you the `trim max_size, root_dir` function, that you can use to *trim* photos within a directory. Simply do a:
+		
+```ruby
+
+	require 'phototrim'
+
+	Phototrim.trim max_size_in_px, root_dir
+	# example: 
+	# Phototrim.trim 640, "images" 
+
+```
+
+Phototrim also shows up as a terminal command you can use. Assuming you want to *trim* photos to a width of 50px within `~/memories/goa_photos`, just do this on your terminal:
+		
+	$ phototrim 50, ~/memories/goa_photos
+
+Boom! :)
 
 ## Contributing
 
