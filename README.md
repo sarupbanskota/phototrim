@@ -25,16 +25,18 @@ Or install it yourself as:
 
 ## Usage
 
-The `Phototrim` class makes available to you the `trim max_size, root_dir` function, that you can use to *trim* photos within a directory. Simply do a:
+The `Phototrimmer` class makes available to you the `main` function, that does all your heavy lifting. Simply do a:
 		
 ```ruby
 
 	require 'phototrim'
 
-	Phototrim.trim max_size_in_px, root_dir
+        trimmer = Phototrimmer.new max_size_in_px, src_dir, dest_dir
+        trimmer.main
 	# example: 
-	# Phototrim.trim 640, "images" 
-
+	# trimmer = Phototrimmer.new 640, "/home/sarupbanskota/old_images", "/home/sarupbanskota/better_destination"
+        # trimmer.main
+ 
 ```
 
 Phototrim also shows up as a terminal command you can use. Assuming you want to *trim* photos to a width of 50px within `~/memories/goa_photos`, you can use the `phototrim` command. If you like, there's also a destination option.
