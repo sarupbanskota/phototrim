@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
 
 require 'phototrim'
-puts Phototrim.trim(ARGV[0].to_i, ARGV[1])
+puts Phototrim.trim(ARGV[0].to_i, ARGV[1], ARGV[2])

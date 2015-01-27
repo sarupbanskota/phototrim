@@ -14,6 +14,7 @@ class Phototrim
       unless src_object == "." or src_object == ".." or File.extname(src_object) == ".svg"
         if File.directory? File.join(src_path, src_object)
           puts "Processing images within #{src_object}..."
+          system "mkdir -p #{File.join(dest_path, src_object)}"
           trim(max_size, File.join(src_path, src_object), File.join(dest_path, src_object))
         else
           puts "Processing file #{src_object}"
