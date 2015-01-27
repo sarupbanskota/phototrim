@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
 
 require 'phototrim'
-puts Phototrim.main ARGV[0].to_i, ARGV[1], ARGV[2]
+
+trimmer = Phototrimmer.new ARGV[0].to_i, ARGV[1], ARGV[2]
+puts trimmer.main 
