@@ -4,9 +4,16 @@ Simple gem that helps with resizing a bunch of photos
 
 ## Installation
 
+Phototrim has `rmagick` as dependency and it requires MagicWand to run. Depending on your distribution, you'll have to install MagickWand headers first:
+
+
+	$ sudo apt-get install libmagickwand-dev
+	$ sudo yum install ImageMagick-devel
+
+
 Add this line to your application's Gemfile:
 
-    gem 'phototrim'
+     gem 'phototrim'
 
 And then execute:
 
@@ -30,9 +37,10 @@ The `Phototrim` class makes available to you the `trim max_size, root_dir` funct
 
 ```
 
-Phototrim also shows up as a terminal command you can use. Assuming you want to *trim* photos to a width of 50px within `~/memories/goa_photos`, just do this on your terminal:
-		
-	$ phototrim 50, ~/memories/goa_photos
+Phototrim also shows up as a terminal command you can use. Assuming you want to *trim* photos to a width of 50px within `~/memories/goa_photos`, you can use the `phototrim` command. If you like, there's also a destination option.
+	
+	$ phototrim 50 ~/memories/goa_photos
+	$ phototrim 640 ~/memories/goa_photos ~/Pictures/Goa        
 
 Boom! :)
 
