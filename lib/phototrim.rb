@@ -15,7 +15,7 @@ class Phototrimmer
 
   def main
     system("mkdir -p #{@dest}")
-    File.directory? @src ? wrangle : trim
+    File.directory?(@src)? wrangle : trim
   end
 
   def wrangle
